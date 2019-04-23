@@ -1,0 +1,120 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AdminMaster.master.cs" Inherits="WebApplication3.AdminMaster" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Welcome</title>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Custom-Cs.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="scripts/jquery-1.9.1.min.js"></script>
+    <script src="scripts/bootstrap.min.js"></script>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript" language="javascript">
+function DisableBackButton() {
+window.history.forward()
+}
+DisableBackButton();
+window.onload = DisableBackButton;
+window.onpageshow = function(evt) { if (evt.persisted) DisableBackButton() }
+window.onunload = function() { void (0) }
+</script>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <!-- Navbar -->
+            <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a  href="AdminHome.aspx"><span>
+                            <img alt="Logo" src="pic/logo.png" height="70" /></span>SSTN</a>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="AdminHome.aspx">Home</a></li>
+                            <li><a href="AdminReview.aspx">Review</a></li>
+                            
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Add Product<b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="AddRoom.aspx">Add Room</a></li>
+                                    <li><a href="AddFood.aspx">Add Food</a></li>
+                                    <li><a href="AddTable.aspx">Add Table</a></li>
+                                    <li><a href="AddHall.aspx">Add Hall</a></li>
+
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Manage<b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="AddFCatagories.aspx">Add Food Category</a></li>
+                                    <li><a href="AddFSubCatagories.aspx">Add Food Sub Category</a></li>
+                                    <li><a href="AddRCatagories.aspx">Add Room Category</a></li>
+                                    <li><a href="AddHallCategory.aspx">Add Hall Category</a></li>
+                                    <li><a href="AddTCategories.aspx">Add Table Category</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">View Product<b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="AdminViewRoom.aspx">View Room</a></li>
+                                    <li><a href="AdminViewFood.aspx">View Food</a></li>
+                                    <li><a href="AdminViewHall.aspx">View Hall</a></li>
+                                    <li><a href="AdminViewTable.aspx">View Table</a></li>
+                                </ul>
+                            </li>
+                            
+                            <li><a href="AdminNewOrder.aspx">New Order</a></li>
+                            <li><a href="Report.aspx">Reports</a></li>
+                            <li><a href="UserAccount.aspx">User Account</a></li>
+                            <li>
+                                <asp:Button ID="BtAdminLogout" runat="server" Class="btn btn-default navbar-btn" Text="Logout" OnClick="BtAdminLogout_Click" />
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Navbar End -->
+            <div class="container">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+    </form>
+    <!--- Footer  -->
+
+    <hr />
+
+    <footer>
+        <div class="container">
+            <p class="pull-right"><a href="#">Back to top</a></p>
+            <p>&copy; SSTN.com &middot; <a href="AdminHome.aspx">Home</a> &middot; <a href="#">About</a> &middot; <a href="#">Contact</a> &middot; <a href="#">Products</a></p>
+        </div>
+    </footer>
+
+    <!--- Footer -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+   <script src="js/jquery-3.2.1.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>
